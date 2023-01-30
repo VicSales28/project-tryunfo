@@ -12,8 +12,9 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
-      isSaveButtonDisabled, onInputChange,
+      hasTrunfo,
+      isSaveButtonDisabled,
+      onInputChange,
       onSaveButtonClick,
     } = this.props;
 
@@ -23,26 +24,26 @@ class Form extends React.Component {
 
           <legend>Adicione nova carta</legend>
 
-          <label htmlFor="name-input">
+          <label htmlFor="cardName">
             Nome  da carta:
             <input
-              id="name-input"
+              id="cardName"
               type="text"
-              name="name-input"
+              name="cardName"
               data-testid="name-input"
               value={ cardName }
               onChange={ onInputChange }
-              maxLength="20"
+              maxLength="40"
               required
             />
           </label>
 
-          <label htmlFor="description-input">
+          <label htmlFor="cardDescription">
             Descrição:
             <textarea
-              id="description-input"
+              id="cardDescription"
               type="textarea"
-              name="description-input"
+              name="cardDescription"
               data-testid="description-input"
               value={ cardDescription }
               onChange={ onInputChange }
@@ -53,59 +54,59 @@ class Form extends React.Component {
             />
           </label>
 
-          <label htmlFor="attr1-input">
+          <label htmlFor="cardAttr1">
             1º atributo da carta:
             <input
-              id="attr1-input"
+              id="cardAttr1"
               type="number"
-              name="attr1-input"
+              name="cardAttr1"
               data-testid="attr1-input"
               value={ cardAttr1 }
               onChange={ onInputChange }
             />
           </label>
 
-          <label htmlFor="attr2-input">
+          <label htmlFor="cardAttr2">
             2º atributo da carta:
             <input
-              id="attr2-input"
+              id="cardAttr2"
               type="number"
-              name="attr2-input"
+              name="cardAttr2"
               data-testid="attr2-input"
               value={ cardAttr2 }
               onChange={ onInputChange }
             />
           </label>
 
-          <label htmlFor="attr3-input">
+          <label htmlFor="cardAttr3">
             3º atributo da carta:
             <input
-              id="attr3-input"
+              id="cardAttr3"
               type="number"
-              name="attr3-input"
+              name="cardAttr3"
               data-testid="attr3-input"
               value={ cardAttr3 }
               onChange={ onInputChange }
             />
           </label>
 
-          <label htmlFor="image-input">
+          <label htmlFor="cardImage">
             Imagem:
             <input
-              id="image-input"
+              id="cardImage"
               type="text"
-              name="image-input"
+              name="cardImage"
               data-testid="image-input"
               value={ cardImage }
               onChange={ onInputChange }
             />
           </label>
 
-          <label htmlFor="rare-input">
+          <label htmlFor="cardRare">
             Raridade:
             <select
-              name="rare-input"
-              id="rare-input"
+              name="cardRare"
+              id="cardRare"
               data-testid="rare-input"
               value={ cardRare }
               onChange={ onInputChange }
@@ -116,12 +117,12 @@ class Form extends React.Component {
             </select>
           </label>
 
-          <label htmlFor="trunfo-input">
+          <label htmlFor="cardTrunfo">
             Super Trunfo:
             <input
-              id="trunfo-input"
+              id="cardTrunfo"
               type="checkbox"
-              name="trunfo-input"
+              name="cardTrunfo"
               data-testid="trunfo-input"
               checked={ cardTrunfo }
               onChange={ onInputChange }
@@ -151,7 +152,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,

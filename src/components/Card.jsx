@@ -33,10 +33,7 @@ class Card extends React.Component {
         <span data-testid="rare-card">{cardRare}</span>
 
         <div>
-          {' '}
-          {
-            ({ cardTrunfo } === true)(<span data-testid="trunfo-card">Super Trunfo</span>)
-          }
+          {cardTrunfo && <span data-testid="trunfo-card">Super Trunfo</span>}
         </div>
 
       </section>
