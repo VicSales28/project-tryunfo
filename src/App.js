@@ -64,6 +64,14 @@ class App extends React.Component {
     }
   };
 
+  deleteCard = (cardToRemove) => {
+    const { savedCards } = this.state;
+    if (cardToRemove.cardTrunfo) { this.setState({ hasTrunfo: false }); }
+    const newSavedCards = savedCards
+      .filter((card) => card.cardName !== cardToRemove.cardName);
+    this.setState({ savedCards: [...newSavedCards] });
+  };
+
   onSaveButtonClick = () => {
     const {
       cardName,
@@ -156,17 +164,26 @@ class App extends React.Component {
         />
         <section>
           {savedCards.map((card) => (
-            <Card
-              key={ card.cardName }
-              cardName={ card.cardName }
-              cardDescription={ card.cardDescription }
-              cardAttr1={ card.cardAttr1 }
-              cardAttr2={ card.cardAttr2 }
-              cardAttr3={ card.cardAttr3 }
-              cardImage={ card.cardImage }
-              cardRare={ card.cardRare }
-              cardTrunfo={ card.cardTrunfo }
-            />
+            <div key={ `${card.cardName}` }>
+              <Card
+                key={ card.cardName }
+                cardName={ card.cardName }
+                cardDescription={ card.cardDescription }
+                cardAttr1={ card.cardAttr1 }
+                cardAttr2={ card.cardAttr2 }
+                cardAttr3={ card.cardAttr3 }
+                cardImage={ card.cardImage }
+                cardRare={ card.cardRare }
+                cardTrunfo={ card.cardTrunfo }
+              />
+              <button
+                type="button"
+                data-testid="delete-button"
+                onClick={ () => this.deleteCard(card) }
+              >
+                Apagar carta
+              </button>
+            </div>
           ))}
         </section>
       </main>
