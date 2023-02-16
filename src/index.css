@@ -16,6 +16,7 @@ code {
 
 /* Arquivo Form.jsx */
 
+
 .form-main {
   width:500px;
   background-color: rgba(0, 0, 0, .2);
@@ -23,6 +24,14 @@ code {
   border-radius: 16px;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, .5);
   backdrop-filter: blur(10px);
+}
+
+.label {
+  color:rgb(2, 1, 1)
+}
+
+#title {
+  color:rgb(2, 1, 1)
 }
 
 .info {
