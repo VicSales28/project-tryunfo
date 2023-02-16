@@ -1,6 +1,10 @@
 import React from 'react';
+import Title from './components/Title';
 import Form from './components/Form';
 import Card from './components/Card';
+import SmallTitle from './components/SmallTitle';
+import SavedCards from './components/SavedCards';
+import Footer from './components/Footer';
 
 class App extends React.Component {
   state = {
@@ -103,8 +107,9 @@ class App extends React.Component {
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
-      cardRare: 'normal',
+      cardRare: '',
       isSaveButtonDisabled: true,
+      cardTrunfo: false,
     }), this.checkHasTrunfo);
   };
 
@@ -136,57 +141,52 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <main>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
+      <>
+        <Title />
+
+        <main className="containers">
+
+          <section className="container">
+            <Form
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onInputChange={ this.onInputchange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
+          </section>
+
+          <section className="container">
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </section>
+
+        </main>
+
+        <SmallTitle />
+
+        <SavedCards
           savedCards={ savedCards }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onInputChange={ this.onInputchange }
-          onSaveButtonClick={ this.onSaveButtonClick }
+          deleteCard={ this.deleteCard }
         />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
-        <section>
-          {savedCards.map((card) => (
-            <div key={ `${card.cardName}` }>
-              <Card
-                key={ card.cardName }
-                cardName={ card.cardName }
-                cardDescription={ card.cardDescription }
-                cardAttr1={ card.cardAttr1 }
-                cardAttr2={ card.cardAttr2 }
-                cardAttr3={ card.cardAttr3 }
-                cardImage={ card.cardImage }
-                cardRare={ card.cardRare }
-                cardTrunfo={ card.cardTrunfo }
-              />
-              <button
-                type="button"
-                data-testid="delete-button"
-                onClick={ () => this.deleteCard(card) }
-              >
-                Apagar carta
-              </button>
-            </div>
-          ))}
-        </section>
-      </main>
+
+        <Footer />
+      </>
     );
   }
 }

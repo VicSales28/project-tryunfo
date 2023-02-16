@@ -19,133 +19,172 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <form>
-        <fieldset>
+      <form className="form-main">
 
-          <legend>Adicione nova carta</legend>
+        <h2 className="title is-4">Add new card:</h2>
 
-          <label htmlFor="cardName">
-            Nome  da carta:
-            <input
-              id="cardName"
-              type="text"
-              name="cardName"
-              data-testid="name-input"
-              value={ cardName }
-              onChange={ onInputChange }
-              maxLength="40"
-              required
-            />
+        <div className="field">
+          <label htmlFor="cardName" className="label">
+            Name:
+            <div className="control">
+              <input
+                id="cardName"
+                type="text"
+                name="cardName"
+                data-testid="name-input"
+                className="input"
+                placeholder="Type your character's name"
+                value={ cardName }
+                onChange={ onInputChange }
+                maxLength="40"
+              />
+            </div>
           </label>
+        </div>
 
-          <label htmlFor="cardDescription">
-            Descrição:
-            <textarea
-              id="cardDescription"
-              type="textarea"
-              name="cardDescription"
-              data-testid="description-input"
-              value={ cardDescription }
-              onChange={ onInputChange }
-              maxLength="80"
-              required
-              rows="5"
-              cols="25"
-            />
+        <div className="field">
+          <label htmlFor="cardDescription" className="label">
+            Description:
+            <div className="control">
+              <textarea
+                id="cardDescription"
+                type="textarea"
+                name="cardDescription"
+                data-testid="description-input"
+                className="textarea"
+                placeholder="Describe the character's abilities"
+                value={ cardDescription }
+                onChange={ onInputChange }
+                maxLength="80"
+                rows="3"
+                cols="25"
+              />
+            </div>
           </label>
+        </div>
 
-          <label htmlFor="cardAttr1">
-            1º atributo da carta:
-            <input
-              id="cardAttr1"
-              type="number"
-              name="cardAttr1"
-              data-testid="attr1-input"
-              value={ cardAttr1 }
-              onChange={ onInputChange }
-            />
+        <div className="field">
+          <label htmlFor="cardAttr1" className="label">
+            Attack:
+            <div className="control">
+              <input
+                id="cardAttr1"
+                type="number"
+                name="cardAttr1"
+                data-testid="attr1-input"
+                className="input is-small"
+                value={ cardAttr1 }
+                onChange={ onInputChange }
+              />
+            </div>
           </label>
+        </div>
 
-          <label htmlFor="cardAttr2">
-            2º atributo da carta:
-            <input
-              id="cardAttr2"
-              type="number"
-              name="cardAttr2"
-              data-testid="attr2-input"
-              value={ cardAttr2 }
-              onChange={ onInputChange }
-            />
+        <div className="field">
+          <label htmlFor="cardAttr2" className="label">
+            Defense:
+            <div className="control">
+              <input
+                id="cardAttr2"
+                type="number"
+                name="cardAttr2"
+                data-testid="attr2-input"
+                className="input is-small"
+                value={ cardAttr2 }
+                onChange={ onInputChange }
+              />
+            </div>
           </label>
+        </div>
 
-          <label htmlFor="cardAttr3">
-            3º atributo da carta:
-            <input
-              id="cardAttr3"
-              type="number"
-              name="cardAttr3"
-              data-testid="attr3-input"
-              value={ cardAttr3 }
-              onChange={ onInputChange }
-            />
+        <div className="field">
+          <label htmlFor="cardAttr3" className="label">
+            Speed:
+            <div className="control">
+              <input
+                id="cardAttr3"
+                type="number"
+                name="cardAttr3"
+                data-testid="attr3-input"
+                className="input is-small"
+                value={ cardAttr3 }
+                onChange={ onInputChange }
+              />
+            </div>
           </label>
+        </div>
 
-          <label htmlFor="cardImage">
-            Imagem:
-            <input
-              id="cardImage"
-              type="text"
-              name="cardImage"
-              data-testid="image-input"
-              value={ cardImage }
-              onChange={ onInputChange }
-            />
+        <div className="field">
+          <label htmlFor="cardImage" className="label">
+            Image:
+            <div className="control">
+              <input
+                id="cardImage"
+                type="text"
+                name="cardImage"
+                data-testid="image-input"
+                className="input"
+                placeholder="Type URL"
+                value={ cardImage }
+                onChange={ onInputChange }
+              />
+            </div>
           </label>
+        </div>
 
-          <label htmlFor="cardRare">
-            Raridade:
-            <select
-              name="cardRare"
-              id="cardRare"
-              data-testid="rare-input"
-              value={ cardRare }
-              onChange={ onInputChange }
-            >
-              {/* <option selected>Selecione uma opção</option> */}
-              <option value="normal">normal</option>
-              <option value="raro">raro</option>
-              <option value="muito raro">muito raro</option>
-            </select>
-          </label>
-
-          <div>
-            {
-              hasTrunfo
-                ? <span>Você já tem um Super Trunfo em seu baralho</span>
-                : (
-                  <label htmlFor="cardTrunfo">
-                    Super Trunfo:
-                    <input
-                      id="cardTrunfo"
-                      type="checkbox"
-                      name="cardTrunfo"
-                      data-testid="trunfo-input"
-                      checked={ cardTrunfo }
-                      onChange={ onInputChange }
-                    />
-                  </label>)
-            }
-          </div>
-
-          <button
-            data-testid="save-button"
-            disabled={ isSaveButtonDisabled }
-            onClick={ onSaveButtonClick }
+        <div className="select">
+          <select
+            name="cardRare"
+            id="cardRare"
+            data-testid="rare-input"
+            value={ cardRare }
+            onChange={ onInputChange }
           >
-            Salvar
-          </button>
+            <option selected>Select rarity</option>
+            <option value="Regular ⭐">Regular</option>
+            <option value="Rare ⭐⭐">Rare</option>
+            <option value="Very rare ⭐⭐⭐">Very rare</option>
+          </select>
+        </div>
 
-        </fieldset>
+        <div className="field">
+          {
+            hasTrunfo
+              ? <div className="info">You already have a Super Trunfo in your deck.</div>
+              : (
+                <div className="field info">
+                  <div className="control">
+                    <label htmlFor="cardTrunfo" className="label">
+                      Super Trunfo:
+                      {' '}
+                      <input
+                        id="cardTrunfo"
+                        type="checkbox"
+                        name="cardTrunfo"
+                        data-testid="trunfo-input"
+                        className="checkbox"
+                        checked={ cardTrunfo }
+                        onChange={ onInputChange }
+                      />
+                    </label>
+                  </div>
+                </div>)
+          }
+        </div>
+
+        <div className="field-save-button">
+          <div className="control">
+            <button
+              data-testid="save-button"
+              disabled={ isSaveButtonDisabled }
+              onClick={ onSaveButtonClick }
+              className="button is-primary"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+
       </form>
     );
   }
