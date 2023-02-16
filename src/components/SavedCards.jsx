@@ -29,7 +29,7 @@ class SavedCards extends Component {
               className="button is-danger is-active"
               onClick={ () => deleteCard(card) }
             >
-              Apagar carta
+              Delete card
             </button>
           </div>
         ))}
