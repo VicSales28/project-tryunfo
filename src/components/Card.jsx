@@ -16,24 +16,43 @@ class Card extends React.Component {
 
     return (
 
-      <section>
+      <section className="card">
 
-        <h1 data-testid="name-card">{cardName}</h1>
+        <h1 data-testid="name-card" className="title is-size-4 name-card">{cardName}</h1>
 
-        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+        <div className="image-card">
+          <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+        </div>
 
-        <p data-testid="description-card">{cardDescription}</p>
+        <div className="description-card">
+          <p data-testid="description-card">{cardDescription}</p>
+        </div>
 
-        <ul>
-          <li data-testid="attr1-card">{cardAttr1}</li>
-          <li data-testid="attr2-card">{cardAttr2}</li>
-          <li data-testid="attr3-card">{cardAttr3}</li>
-        </ul>
+        <div className="skills-card-container">
+          <div className="skills-display">
+            <p className="skill-item" data-testid="attr1-card">
+              Attack:
+              {' '}
+              {cardAttr1}
+            </p>
+            <p className="skill-item" data-testid="attr2-card">
+              Defense:
+              {' '}
+              {cardAttr2}
+            </p>
+            <p className="skill-item" data-testid="attr3-card">
+              Speed:
+              {' '}
+              {cardAttr3}
+            </p>
+          </div>
+        </div>
 
-        <span data-testid="rare-card">{cardRare}</span>
+        <span data-testid="rare-card" className="rare-card">{cardRare}</span>
 
         <div>
-          {cardTrunfo && <span data-testid="trunfo-card">Super Trunfo</span>}
+          {cardTrunfo
+          && <span data-testid="trunfo-card" className="trunfo">Super Trunfo</span>}
         </div>
 
       </section>
