@@ -51,6 +51,6 @@ _Give me feedbacks, I'm open to new ideas_ 😉
 
 <p align="center">
   <img
-    src=""
-    alt="result-gif" height="380" style="border-radius:50px;">
+    src="https://cdn.discordapp.com/attachments/1062029691860566078/1076178085344452710/video-gif-pronto.gif"
+    alt="result-gif" height="350" style="border-radius:50px;">
 </p>
