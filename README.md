@@ -2,7 +2,7 @@
 
 My fourth project produced while I was studying ReactJS at Trybe Programming School 
 
-The user person is able to create a personalized deck of cards.
+The user person is able to create a personalized deck of cards in ninja style.
 
 For the design I was inspired by my favorite Japanese manga character, Uzumaki Naruto.
 
