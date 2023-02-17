@@ -1,6 +1,6 @@
 # Tryunfo 🥷
 
-My fourth project produced while I was studying ReactJS at Trybe Programming School 
+My new project produced while I was studying ReactJS at Trybe Programming School 
 
 The user person is able to create a personalized deck of cards in ninja style.
 
