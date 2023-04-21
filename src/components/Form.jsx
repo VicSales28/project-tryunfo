@@ -21,11 +21,9 @@ class Form extends React.Component {
     return (
       <form className="form-main">
 
-        <h2 className="title is-4" id="title">Add new card:</h2>
-
         <div className="field">
           <label htmlFor="cardName" className="label">
-            Name:
+            Card&apos;s name:
             <div className="control">
               <input
                 id="cardName"

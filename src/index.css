@@ -18,8 +18,8 @@ code {
 
 
 .form-main {
-  width:500px;
-  background-color: rgba(0, 0, 0, .2);
+  width:470px;
+  background-color: rgba(211, 205, 205, 0.2);
   padding: 32px;
   border-radius: 16px;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, .5);
@@ -27,11 +27,11 @@ code {
 }
 
 .label {
-  color:rgb(2, 1, 1)
+  color:rgb(59, 50, 50)
 }
 
 #title {
-  color:rgb(2, 1, 1)
+  color:rgb(37, 35, 35)
 }
 
 .info {
@@ -132,6 +132,7 @@ code {
 /* Arquivo App.js */
 
 .containers {
+  /* This image is not mine. It was copied from the Official Naruto website. */
   background: url('https://cdn.discordapp.com/attachments/1062029691860566078/1075802393058492486/header_bg_pc.png');;
   background-size: cover;
   display: flex;
